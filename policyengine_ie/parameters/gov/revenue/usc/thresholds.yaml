@@ -12,35 +12,35 @@ metadata:
 exemption_threshold:
   description: Minimum income threshold for USC liability
   values:
-    2022-01-01: 13000
-    2023-01-01: 13000
-    2024-01-01: 13000
+    2022-01-01: 13_000
+    2023-01-01: 13_000
+    2024-01-01: 13_000
 
 band_1_upper:
   description: Upper threshold for USC band 1
   values:
-    2022-01-01: 12012
-    2023-01-01: 12012
-    2024-01-01: 12012
+    2022-01-01: 12_012
+    2023-01-01: 12_012
+    2024-01-01: 12_012
 
 band_2_upper:
   description: Upper threshold for USC band 2
   values:
-    2022-01-01: 21295
-    2023-01-01: 22920
-    2024-01-01: 25760
+    2022-01-01: 21_295
+    2023-01-01: 22_920
+    2024-01-01: 25_760
 
 band_3_upper:
   description: Upper threshold for USC band 3
   values:
-    2022-01-01: 70044
-    2023-01-01: 70044
-    2024-01-01: 70044
+    2022-01-01: 70_044
+    2023-01-01: 70_044
+    2024-01-01: 70_044
 
 # Thresholds for reduced rates
 reduced_rate_income_threshold:
   description: Income threshold for reduced USC rates (medical card holders and over 70s)
   values:
-    2022-01-01: 60000
-    2023-01-01: 60000
-    2024-01-01: 60000
+    2022-01-01: 60_000
+    2023-01-01: 60_000
+    2024-01-01: 60_000

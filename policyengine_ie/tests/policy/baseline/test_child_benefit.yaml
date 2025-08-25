@@ -13,7 +13,7 @@
         members: [child_1]
   output:
     child_benefit:
-      child_1: 2208  # €184 per month * 12 months = €2,208
+      child_1: 2_208  # €184 per month * 12 months = €2,208
 
 - name: Child Benefit for child aged 12 and over
   description: Test Child Benefit for teenager aged 15
@@ -30,7 +30,7 @@
         members: [child_1]
   output:
     child_benefit:
-      child_1: 2592  # €216 per month * 12 months = €2,592
+      child_1: 2_592  # €216 per month * 12 months = €2,592
 
 - name: Child Benefit for twins under 12
   description: Test Child Benefit for twin children aged 6
@@ -51,8 +51,8 @@
         members: [child_1, child_2]
   output:
     child_benefit:
-      child_1: 3312  # €184 * 1.5 * 12 = €3,312
-      child_2: 3312  # €184 * 1.5 * 12 = €3,312
+      child_1: 3_312  # €184 * 1.5 * 12 = €3,312
+      child_2: 3_312  # €184 * 1.5 * 12 = €3,312
 
 - name: No Child Benefit for adult
   description: Test that adults don't receive Child Benefit
@@ -87,4 +87,4 @@
         members: [child_1]
   output:
     child_benefit:
-      child_1: 2592  # €216 per month * 12 months = €2,592
+      child_1: 2_592  # €216 per month * 12 months = €2,592

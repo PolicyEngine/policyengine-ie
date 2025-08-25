@@ -5,7 +5,7 @@
     people:
       person_1:
         age: 35
-        employment_income: 50000
+        employment_income: 50_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -14,7 +14,7 @@
         members: [person_1]
   output:
     income_tax:
-      person_1: 3600  # €42,000 @ 20% (€8,400) + €8,000 @ 40% (€3,200) = €11,600 - tax credits
+      person_1: 3_600  # €42,000 @ 20% (€8,400) + €8,000 @ 40% (€3,200) = €11,600 - tax credits
 
 - name: Income tax at standard rate threshold
   description: Test income tax for someone earning exactly at the standard rate threshold
@@ -23,7 +23,7 @@
     people:
       person_1:
         age: 30
-        employment_income: 42000
+        employment_income: 42_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -32,7 +32,7 @@
         members: [person_1]
   output:
     income_tax:
-      person_1: 4650  # €42,000 @ 20% = €8,400 - personal credit €1,875 - PAYE credit €1,875
+      person_1: 4_650  # €42,000 @ 20% = €8,400 - personal credit €1,875 - PAYE credit €1,875
 
 - name: Low income no tax liability
   description: Test that low income earners pay no income tax after credits
@@ -41,7 +41,7 @@
     people:
       person_1:
         age: 25
-        employment_income: 15000
+        employment_income: 15_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -59,7 +59,7 @@
     people:
       person_1:
         age: 45
-        employment_income: 100000
+        employment_income: 100_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -68,4 +68,4 @@
         members: [person_1]
   output:
     income_tax:
-      person_1: 27450  # €42,000 @ 20% (€8,400) + €58,000 @ 40% (€23,200) - credits (€3,750)
+      person_1: 27_450  # €42,000 @ 20% (€8,400) + €58,000 @ 40% (€23,200) - credits (€3,750)

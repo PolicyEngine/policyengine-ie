@@ -5,7 +5,7 @@
     people:
       person_1:
         age: 35
-        employment_income: 50000
+        employment_income: 50_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -14,7 +14,7 @@
         members: [person_1]
   output:
     usc:
-      person_1: 1570.44  # €12,012@0.5% + €13,748@2% + €24,240@4% = €60.06 + €274.96 + €969.60 = €1,304.62
+      person_1: 1_570.44  # €12,012@0.5% + €13,748@2% + €24,240@4% = €60.06 + €274.96 + €969.60 = €1,304.62
 
 - name: USC exempt - low income
   description: Test that low income earners are exempt from USC
@@ -23,7 +23,7 @@
     people:
       person_1:
         age: 25
-        employment_income: 12000
+        employment_income: 12_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -41,7 +41,7 @@
     people:
       person_1:
         age: 75
-        employment_income: 40000
+        employment_income: 40_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -59,7 +59,7 @@
     people:
       person_1:
         age: 45
-        employment_income: 100000
+        employment_income: 100_000
     tax_units:
       tax_unit_1:
         adults: [person_1]
@@ -68,4 +68,4 @@
         members: [person_1]
   output:
     usc:
-      person_1: 4734.44  # All bands: €60.06 + €274.96 + €1,771.36 + €2,396.48 (€29,956@8%)
+      person_1: 4_734.44  # All bands: €60.06 + €274.96 + €1,771.36 + €2,396.48 (€29,956@8%)

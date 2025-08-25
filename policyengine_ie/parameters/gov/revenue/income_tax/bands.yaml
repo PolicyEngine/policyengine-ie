@@ -12,31 +12,31 @@ metadata:
 single:
   description: Standard rate cut-off for single person
   values:
-    2022-01-01: 40000
-    2023-01-01: 40000
-    2024-01-01: 42000
-    2025-01-01: 44000
+    2022-01-01: 40_000
+    2023-01-01: 40_000
+    2024-01-01: 42_000
+    2025-01-01: 44_000
 
 married_one_income:
   description: Standard rate cut-off for married couple/civil partners (one income)
   values:
-    2022-01-01: 49000
-    2023-01-01: 49000
-    2024-01-01: 51000
-    2025-01-01: 53000
+    2022-01-01: 49_000
+    2023-01-01: 49_000
+    2024-01-01: 51_000
+    2025-01-01: 53_000
 
 married_max_increase:
   description: Maximum increase in standard rate cut-off for second earner
   values:
-    2022-01-01: 31000
-    2023-01-01: 31000
-    2024-01-01: 33000
-    2025-01-01: 35000
+    2022-01-01: 31_000
+    2023-01-01: 31_000
+    2024-01-01: 33_000
+    2025-01-01: 35_000
 
 single_with_child:
   description: Standard rate cut-off for single parent with Child Carer Credit
   values:
-    2022-01-01: 44000
-    2023-01-01: 44000
-    2024-01-01: 46000
-    2025-01-01: 48000
+    2022-01-01: 44_000
+    2023-01-01: 44_000
+    2024-01-01: 46_000
+    2025-01-01: 48_000
