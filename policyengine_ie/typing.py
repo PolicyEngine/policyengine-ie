@@ -12,10 +12,10 @@ from enum import Enum
 # County definitions for Ireland
 class County(Enum):
     """Irish counties for location-based calculations."""
-    
+
     # Leinster
     DUBLIN = "dublin"
-    KILDARE = "kildare"  
+    KILDARE = "kildare"
     LAOIS = "laois"
     LONGFORD = "longford"
     LOUTH = "louth"
@@ -26,7 +26,7 @@ class County(Enum):
     WICKLOW = "wicklow"
     CARLOW = "carlow"
     KILKENNY = "kilkenny"
-    
+
     # Munster
     CORK = "cork"
     KERRY = "kerry"
@@ -34,14 +34,14 @@ class County(Enum):
     TIPPERARY = "tipperary"
     WATERFORD = "waterford"
     CLARE = "clare"
-    
+
     # Connacht
     GALWAY = "galway"
     MAYO = "mayo"
     ROSCOMMON = "roscommon"
     SLIGO = "sligo"
     LEITRIM = "leitrim"
-    
+
     # Ulster (in Republic of Ireland)
     CAVAN = "cavan"
     DONEGAL = "donegal"
@@ -50,7 +50,7 @@ class County(Enum):
 
 class MaritalStatus(Enum):
     """Marital status for tax and benefit calculations."""
-    
+
     SINGLE = "single"
     MARRIED = "married"
     SEPARATED = "separated"
@@ -61,7 +61,7 @@ class MaritalStatus(Enum):
 
 class PRSIClass(Enum):
     """PRSI contribution classes."""
-    
+
     CLASS_A = "A"  # Most employees
     CLASS_B = "B"  # Public servants recruited before 6 April 1995
     CLASS_D = "D"  # Public servants recruited on or after 6 April 1995
@@ -74,14 +74,14 @@ class PRSIClass(Enum):
 
 class LocalAuthority(Enum):
     """Local authorities for housing calculations."""
-    
+
     # Cities
     DUBLIN_CITY = "dublin_city"
     CORK_CITY = "cork_city"
     GALWAY_CITY = "galway_city"
     LIMERICK_CITY = "limerick_city"
     WATERFORD_CITY = "waterford_city"
-    
+
     # Counties (sample - would include all 31)
     DUN_LAOGHAIRE_RATHDOWN = "dun_laoghaire_rathdown"
     FINGAL = "fingal"
@@ -92,7 +92,7 @@ class LocalAuthority(Enum):
 
 # Type aliases
 Amount = Union[int, float]
-Rate = Union[int, float] 
+Rate = Union[int, float]
 Threshold = Union[int, float]
 Year = int
 Period = str

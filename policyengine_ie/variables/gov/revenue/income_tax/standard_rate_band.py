@@ -14,17 +14,19 @@ class standard_rate_band(Variable):
     """
     unit = EUR
     reference = "https://www.revenue.ie/en/jobs-and-pensions/calculating-your-income-tax/tax-rate-band.aspx"
-    
+
     def formula(person, period, parameters):
         tax_unit = person.tax_unit
-        
+
         # Get marital status and other circumstances
         is_married = tax_unit("is_married", period)
         has_spouse_income = tax_unit("has_spouse_income", period)
-        has_child_carer_credit = person("has_child_carer_credit", period, options=[False])
-        
+        has_child_carer_credit = person(
+            "has_child_carer_credit", period, options=[False]
+        )
+
         p = parameters(period).gov.revenue.income_tax.bands
-        
+
         # Determine the standard rate band
         standard_band = select(
             [
@@ -35,15 +37,15 @@ class standard_rate_band(Variable):
                 # Married couple with two incomes (complex calculation - simplified here)
                 logical_and(is_married, has_spouse_income),
                 # Single person (default)
-                logical_not(is_married)
+                logical_not(is_married),
             ],
             [
                 p.single_with_child,
                 p.married_one_income,
                 p.married_one_income,  # Simplified - should calculate based on spouse income
-                p.single
+                p.single,
             ],
-            default=p.single
+            default=p.single,
         )
-        
+
         return standard_band
