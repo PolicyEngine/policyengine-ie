@@ -1,0 +1,27 @@
+version: 1
+project:
+  title: PolicyEngine Ireland
+  description: Microsimulation model for Ireland's tax and benefit system
+  keywords: [tax, benefits, microsimulation, ireland, policy, USC, PRSI]
+  authors:
+    - name: PolicyEngine Contributors
+      email: hello@policyengine.org
+  github: https://github.com/PolicyEngine/policyengine-ie
+  license: AGPL-3.0-or-later
+  
+site:
+  template: book-theme
+  title: PolicyEngine Ireland Documentation
+  nav:
+    - title: GitHub
+      url: https://github.com/PolicyEngine/policyengine-ie
+    - title: PolicyEngine
+      url: https://policyengine.org
+  
+  options:
+    favicon: _static/favicon.ico
+    twitter: policyengine
+    repository_url: https://github.com/PolicyEngine/policyengine-ie
+    use_repository_button: true
+    use_issues_button: true
+    use_edit_page_button: true
