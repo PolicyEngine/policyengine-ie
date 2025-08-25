@@ -1,0 +1,1 @@
+"""Variables for the Irish tax and benefit system."""

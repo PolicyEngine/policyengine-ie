@@ -1,0 +1,22 @@
+format: jb-book
+root: index
+chapters:
+- file: installation
+- file: quickstart
+- file: tax_system
+  sections:
+  - file: tax_system/income_tax
+  - file: tax_system/usc
+  - file: tax_system/prsi
+- file: benefits_system
+  sections:
+  - file: benefits_system/child_benefit
+  - file: benefits_system/jobseekers
+  - file: benefits_system/state_pension
+  - file: benefits_system/working_family_payment
+- file: examples
+  sections:
+  - file: examples/basic_household
+  - file: examples/policy_reform
+- file: api_reference
+- file: contributing

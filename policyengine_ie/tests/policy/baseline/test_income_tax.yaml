@@ -1,0 +1,71 @@
+- name: Single person income tax calculation - 2024
+  description: Test income tax calculation for single person with €50,000 income
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 35
+        employment_income: 50000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    income_tax:
+      person_1: 3600  # €42,000 @ 20% (€8,400) + €8,000 @ 40% (€3,200) = €11,600 - tax credits
+
+- name: Income tax at standard rate threshold
+  description: Test income tax for someone earning exactly at the standard rate threshold
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 30
+        employment_income: 42000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    income_tax:
+      person_1: 4650  # €42,000 @ 20% = €8,400 - personal credit €1,875 - PAYE credit €1,875
+
+- name: Low income no tax liability
+  description: Test that low income earners pay no income tax after credits
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 25
+        employment_income: 15000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    income_tax:
+      person_1: 0  # €15,000 @ 20% = €3,000 - credits €3,750 = €0
+
+- name: High income earner
+  description: Test income tax for high income earner
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 45
+        employment_income: 100000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    income_tax:
+      person_1: 27450  # €42,000 @ 20% (€8,400) + €58,000 @ 40% (€23,200) - credits (€3,750)

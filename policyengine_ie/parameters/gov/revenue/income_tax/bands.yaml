@@ -1,0 +1,42 @@
+description: Income tax standard rate cut-off points (bands)
+reference:
+  - title: Tax rates, bands and reliefs
+    href: https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/tax-relief-charts/index.aspx
+  - title: What is a tax rate band?
+    href: https://www.revenue.ie/en/jobs-and-pensions/calculating-your-income-tax/tax-rate-band.aspx
+metadata:
+  unit: currency-EUR
+  label: Income tax bands
+  period: year
+
+single:
+  description: Standard rate cut-off for single person
+  values:
+    2022-01-01: 40000
+    2023-01-01: 40000
+    2024-01-01: 42000
+    2025-01-01: 44000
+
+married_one_income:
+  description: Standard rate cut-off for married couple/civil partners (one income)
+  values:
+    2022-01-01: 49000
+    2023-01-01: 49000
+    2024-01-01: 51000
+    2025-01-01: 53000
+
+married_max_increase:
+  description: Maximum increase in standard rate cut-off for second earner
+  values:
+    2022-01-01: 31000
+    2023-01-01: 31000
+    2024-01-01: 33000
+    2025-01-01: 35000
+
+single_with_child:
+  description: Standard rate cut-off for single parent with Child Carer Credit
+  values:
+    2022-01-01: 44000
+    2023-01-01: 44000
+    2024-01-01: 46000
+    2025-01-01: 48000

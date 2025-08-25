@@ -1,0 +1,58 @@
+description: PRSI employee contribution rates by class
+reference:
+  - title: Pay Related Social Insurance (PRSI)
+    href: https://www.revenue.ie/en/employing-people/paying-your-employees-tax-to-revenue/prsi.aspx
+  - title: Paying social insurance (PRSI)
+    href: https://www.citizensinformation.ie/en/social-welfare/irish-social-welfare-system/social-insurance-prsi/paying-social-insurance/
+metadata:
+  unit: /1
+  label: PRSI employee rates
+  currency: EUR
+
+class_a:
+  description: Employee PRSI rate for Class A (most employees)
+  values:
+    2022-01-01: 0.04
+    2023-01-01: 0.04
+    2024-01-01: 0.04
+    2024-10-01: 0.041  # Increased by 0.1% from October 2024
+
+class_b:
+  description: Employee PRSI rate for Class B (public servants pre-1995)
+  values:
+    2022-01-01: 0.04
+    2023-01-01: 0.04
+    2024-01-01: 0.04
+    2024-10-01: 0.041
+
+class_d:
+  description: Employee PRSI rate for Class D (public servants post-1995)
+  values:
+    2022-01-01: 0.04
+    2023-01-01: 0.04
+    2024-01-01: 0.04
+    2024-10-01: 0.041
+
+class_h:
+  description: Employee PRSI rate for Class H (uninsured employees)
+  values:
+    2022-01-01: 0.04
+    2023-01-01: 0.04
+    2024-01-01: 0.04
+    2024-10-01: 0.041
+
+class_j:
+  description: Employee PRSI rate for Class J (under 16 or over 66)
+  values:
+    2022-01-01: 0.04
+    2023-01-01: 0.04
+    2024-01-01: 0.04
+    2024-10-01: 0.041
+
+class_s:
+  description: Self-employed PRSI rate for Class S
+  values:
+    2022-01-01: 0.04
+    2023-01-01: 0.04
+    2024-01-01: 0.04025  # Blended rate due to October increase
+    2025-01-01: 0.04125  # Full rate after October increase

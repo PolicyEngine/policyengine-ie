@@ -1,0 +1,40 @@
+description: PRSI thresholds and limits
+reference:
+  - title: Pay Related Social Insurance (PRSI)
+    href: https://www.revenue.ie/en/employing-people/paying-your-employees-tax-to-revenue/prsi.aspx
+  - title: Paying social insurance (PRSI)
+    href: https://www.citizensinformation.ie/en/social-welfare/irish-social-welfare-system/social-insurance-prsi/paying-social-insurance/
+metadata:
+  unit: currency-EUR
+  label: PRSI thresholds
+  period: week
+
+employee_weekly_threshold:
+  description: Weekly earnings threshold below which no employee PRSI is paid
+  values:
+    2022-01-01: 352
+    2023-01-01: 352
+    2024-01-01: 352
+
+employer_higher_rate_threshold:
+  description: Weekly earnings threshold above which higher employer rate applies
+  values:
+    2022-01-01: 424
+    2023-01-01: 424
+    2024-01-01: 458
+    2024-10-01: 496  # Changed in October 2024
+    2025-01-01: 527  # Will change in January 2025
+
+tapered_credit_upper_limit:
+  description: Weekly earnings upper limit for tapered PRSI credit
+  values:
+    2022-01-01: 424
+    2023-01-01: 424
+    2024-01-01: 424
+
+weekly_prsi_credit:
+  description: Maximum weekly PRSI credit for employees
+  values:
+    2022-01-01: 12
+    2023-01-01: 12
+    2024-01-01: 12

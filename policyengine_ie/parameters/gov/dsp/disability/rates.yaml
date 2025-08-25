@@ -1,0 +1,67 @@
+description: Disability Allowance payment rates
+reference:
+  - title: Disability Allowance
+    href: https://www.citizensinformation.ie/en/social-welfare/disability-and-illness/disability-allowance/
+  - title: Social welfare rates announced in Budget 2025
+    href: https://www.citizensinformation.ie/en/money-and-tax/budgets/social-welfare-rates-announced-in-budget-2025/
+metadata:
+  unit: currency-EUR
+  label: Disability Allowance rates
+  period: week
+
+personal_rate:
+  description: Maximum personal rate for Disability Allowance
+  values:
+    2022-01-01: 220
+    2023-01-01: 232
+    2024-01-01: 244
+    2025-01-01: 256  # €12 increase in Budget 2025
+
+qualified_adult:
+  description: Weekly rate for qualified adult
+  values:
+    2022-01-01: 146
+    2023-01-01: 154.30
+    2024-01-01: 161.90
+    2025-01-01: 170.50
+
+qualified_child:
+  description: Weekly rate for qualified child
+  values:
+    2022-01-01: 38
+    2023-01-01: 40
+    2024-01-01: 42
+    2025-01-01: 44
+
+living_alone_allowance:
+  description: Living Alone Allowance (additional payment)
+  values:
+    2022-01-01: 19
+    2023-01-01: 19
+    2024-01-01: 22
+    2025-01-01: 22
+
+island_allowance:
+  description: Island Allowance (additional payment for island residents)
+  values:
+    2022-01-01: 19
+    2023-01-01: 19
+    2024-01-01: 22
+    2025-01-01: 22
+
+# Age and disability thresholds
+minimum_age:
+  description: Minimum age for Disability Allowance
+  values:
+    2022-01-01: 16
+    2023-01-01: 16
+    2024-01-01: 16
+    2025-01-01: 16
+
+maximum_age:
+  description: Maximum age for Disability Allowance (transfers to State Pension at 66)
+  values:
+    2022-01-01: 66
+    2023-01-01: 66
+    2024-01-01: 66
+    2025-01-01: 66

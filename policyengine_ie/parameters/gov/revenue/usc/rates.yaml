@@ -1,0 +1,60 @@
+description: Universal Social Charge (USC) rates by band
+reference:
+  - title: Standard rates and thresholds of USC
+    href: https://www.revenue.ie/en/jobs-and-pensions/usc/standard-rates-thresholds.aspx
+  - title: Universal Social Charge (USC)
+    href: https://www.citizensinformation.ie/en/money-and-tax/tax/income-tax/universal-social-charge/
+metadata:
+  unit: /1
+  label: USC rates
+  currency: EUR
+
+band_1:
+  description: USC rate for first band (€0 - €12,012)
+  values:
+    2022-01-01: 0.005
+    2023-01-01: 0.005
+    2024-01-01: 0.005
+
+band_2:
+  description: USC rate for second band (€12,012.01 - €25,760)
+  values:
+    2022-01-01: 0.02
+    2023-01-01: 0.02
+    2024-01-01: 0.02
+
+band_3:
+  description: USC rate for third band (€25,760.01 - €70,044)
+  values:
+    2022-01-01: 0.045
+    2023-01-01: 0.045
+    2024-01-01: 0.04  # Reduced from 4.5% to 4% in 2024
+
+band_4:
+  description: USC rate for fourth band (above €70,044)
+  values:
+    2022-01-01: 0.08
+    2023-01-01: 0.08
+    2024-01-01: 0.08
+
+# Reduced rates for qualifying individuals
+reduced_band_1:
+  description: Reduced USC rate for band 1 (medical card holders and over 70s)
+  values:
+    2022-01-01: 0.005
+    2023-01-01: 0.005
+    2024-01-01: 0.005
+
+reduced_band_2:
+  description: Reduced USC rate for band 2 (medical card holders and over 70s)
+  values:
+    2022-01-01: 0.02
+    2023-01-01: 0.02
+    2024-01-01: 0.02
+
+reduced_band_3:
+  description: Reduced USC rate for band 3 (medical card holders and over 70s)
+  values:
+    2022-01-01: 0.02
+    2023-01-01: 0.02
+    2024-01-01: 0.02

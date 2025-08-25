@@ -1,0 +1,89 @@
+description: Irish income tax credits
+reference:
+  - title: Tax rates, bands and reliefs
+    href: https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/tax-relief-charts/index.aspx
+  - title: Tax credits and reliefs
+    href: https://www.citizensinformation.ie/en/money-and-tax/tax/income-tax/tax-credits/
+metadata:
+  unit: currency-EUR
+  label: Income tax credits
+  period: year
+
+personal:
+  single:
+    description: Personal tax credit for single person
+    values:
+      2022-01-01: 1700
+      2023-01-01: 1700
+      2024-01-01: 1875
+  
+  married:
+    description: Personal tax credit for married person/civil partner
+    values:
+      2022-01-01: 3400
+      2023-01-01: 3400
+      2024-01-01: 3750
+
+paye:
+  description: PAYE (employee) tax credit
+  values:
+    2022-01-01: 1700
+    2023-01-01: 1700
+    2024-01-01: 1875
+
+earned_income:
+  description: Earned income tax credit (maximum)
+  values:
+    2022-01-01: 1700
+    2023-01-01: 1700
+    2024-01-01: 1875
+
+home_carer:
+  description: Home carer's tax credit (maximum)
+  values:
+    2022-01-01: 1600
+    2023-01-01: 1600
+    2024-01-01: 1800
+
+rent:
+  single:
+    description: Rent tax credit for single person
+    values:
+      2022-01-01: 750
+      2023-01-01: 750
+      2024-01-01: 1000
+  
+  married:
+    description: Rent tax credit for married/civil partners
+    values:
+      2022-01-01: 1500
+      2023-01-01: 1500
+      2024-01-01: 2000
+
+mortgage_interest:
+  description: Mortgage interest tax credit (maximum)
+  values:
+    2022-01-01: 1250
+    2023-01-01: 1250
+    2024-01-01: 1250
+
+age:
+  description: Age tax credit for those aged 65 and over
+  values:
+    2022-01-01: 245
+    2023-01-01: 245
+    2024-01-01: 245
+
+incapacitated_child:
+  description: Incapacitated child tax credit
+  values:
+    2022-01-01: 3300
+    2023-01-01: 3300
+    2024-01-01: 3300
+
+dependent_relative:
+  description: Dependent relative tax credit
+  values:
+    2022-01-01: 245
+    2023-01-01: 245
+    2024-01-01: 245

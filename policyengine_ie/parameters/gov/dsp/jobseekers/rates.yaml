@@ -1,0 +1,61 @@
+description: Jobseeker's Allowance and Benefit payment rates
+reference:
+  - title: Jobseeker's Allowance
+    href: https://www.citizensinformation.ie/en/social-welfare/unemployed-people/jobseekers-allowance/
+  - title: Jobseeker's Benefit
+    href: https://www.citizensinformation.ie/en/social-welfare/unemployed-people/jobseekers-benefit/
+  - title: Social welfare rates announced in Budget 2025
+    href: https://www.citizensinformation.ie/en/money-and-tax/budgets/social-welfare-rates-announced-in-budget-2025/
+metadata:
+  unit: currency-EUR
+  label: Jobseeker's payment rates
+  period: week
+
+personal_rate:
+  description: Maximum personal rate for Jobseeker's Allowance/Benefit
+  values:
+    2022-01-01: 220
+    2023-01-01: 232
+    2024-01-01: 244
+    2025-01-01: 256  # €12 increase in Budget 2025
+
+qualified_adult:
+  description: Weekly rate for qualified adult
+  values:
+    2022-01-01: 146
+    2023-01-01: 154.30
+    2024-01-01: 161.90
+    2025-01-01: 170.50  # Proportionate increase
+
+qualified_child:
+  description: Weekly rate for qualified child
+  values:
+    2022-01-01: 38
+    2023-01-01: 40
+    2024-01-01: 42
+    2025-01-01: 44  # Proportionate increase
+
+# Age-related rates for Jobseeker's Allowance
+age_18_24:
+  description: Rate for 18-24 year olds (if not living independently)
+  values:
+    2022-01-01: 112.70
+    2023-01-01: 119.10
+    2024-01-01: 124.80
+    2025-01-01: 131.20
+
+age_18_24_independent:
+  description: Full rate for 18-24 year olds living independently with housing support
+  values:
+    2022-01-01: 220
+    2023-01-01: 232
+    2024-01-01: 244
+    2025-01-01: 256
+
+age_25_plus:
+  description: Rate for those aged 25 and over
+  values:
+    2022-01-01: 220
+    2023-01-01: 232
+    2024-01-01: 244
+    2025-01-01: 256

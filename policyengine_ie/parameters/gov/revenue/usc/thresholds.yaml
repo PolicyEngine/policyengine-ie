@@ -1,0 +1,46 @@
+description: Universal Social Charge (USC) thresholds
+reference:
+  - title: Standard rates and thresholds of USC
+    href: https://www.revenue.ie/en/jobs-and-pensions/usc/standard-rates-thresholds.aspx
+  - title: Calculating your USC
+    href: https://www.revenue.ie/en/jobs-and-pensions/usc/calculating-usc.aspx
+metadata:
+  unit: currency-EUR
+  label: USC thresholds
+  period: year
+
+exemption_threshold:
+  description: Minimum income threshold for USC liability
+  values:
+    2022-01-01: 13000
+    2023-01-01: 13000
+    2024-01-01: 13000
+
+band_1_upper:
+  description: Upper threshold for USC band 1
+  values:
+    2022-01-01: 12012
+    2023-01-01: 12012
+    2024-01-01: 12012
+
+band_2_upper:
+  description: Upper threshold for USC band 2
+  values:
+    2022-01-01: 21295
+    2023-01-01: 22920
+    2024-01-01: 25760
+
+band_3_upper:
+  description: Upper threshold for USC band 3
+  values:
+    2022-01-01: 70044
+    2023-01-01: 70044
+    2024-01-01: 70044
+
+# Thresholds for reduced rates
+reduced_rate_income_threshold:
+  description: Income threshold for reduced USC rates (medical card holders and over 70s)
+  values:
+    2022-01-01: 60000
+    2023-01-01: 60000
+    2024-01-01: 60000

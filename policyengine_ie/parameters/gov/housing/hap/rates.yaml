@@ -1,0 +1,107 @@
+description: Housing Assistance Payment (HAP) maximum rent limits by area and household size
+reference:
+  - title: Housing Assistance Payment
+    href: https://www.citizensinformation.ie/en/housing/housing-supports/housing-assistance-payment/
+  - title: HAP rent limits
+    href: https://www.housingagency.ie/housing-assistance-payment-hap/hap-rent-limits
+metadata:
+  unit: currency-EUR
+  label: HAP rent limits
+  period: month
+
+# Dublin rent limits (higher cost area)
+dublin:
+  single_person:
+    description: HAP limit for single person in Dublin
+    values:
+      2022-01-01: 965
+      2023-01-01: 965
+      2024-01-01: 1030  # Increased in 2024
+  
+  couple_no_children:
+    description: HAP limit for couple without children in Dublin
+    values:
+      2022-01-01: 1225
+      2023-01-01: 1225
+      2024-01-01: 1308
+  
+  family_1_child:
+    description: HAP limit for family with 1 child in Dublin
+    values:
+      2022-01-01: 1400
+      2023-01-01: 1400
+      2024-01-01: 1496
+  
+  family_2_children:
+    description: HAP limit for family with 2 children in Dublin
+    values:
+      2022-01-01: 1625
+      2023-01-01: 1625
+      2024-01-01: 1736
+  
+  family_3_children:
+    description: HAP limit for family with 3 children in Dublin
+    values:
+      2022-01-01: 1750
+      2023-01-01: 1750
+      2024-01-01: 1870
+
+# Cork rent limits
+cork:
+  single_person:
+    description: HAP limit for single person in Cork
+    values:
+      2022-01-01: 640
+      2023-01-01: 640
+      2024-01-01: 684
+  
+  couple_no_children:
+    description: HAP limit for couple without children in Cork
+    values:
+      2022-01-01: 815
+      2023-01-01: 815
+      2024-01-01: 871
+  
+  family_1_child:
+    description: HAP limit for family with 1 child in Cork
+    values:
+      2022-01-01: 925
+      2023-01-01: 925
+      2024-01-01: 989
+  
+  family_2_children:
+    description: HAP limit for family with 2 children in Cork
+    values:
+      2022-01-01: 1075
+      2023-01-01: 1075
+      2024-01-01: 1150
+
+# Other areas (lower cost)
+other:
+  single_person:
+    description: HAP limit for single person in other areas
+    values:
+      2022-01-01: 430
+      2023-01-01: 430
+      2024-01-01: 460
+  
+  couple_no_children:
+    description: HAP limit for couple without children in other areas
+    values:
+      2022-01-01: 550
+      2023-01-01: 550
+      2024-01-01: 588
+  
+  family_1_child:
+    description: HAP limit for family with 1 child in other areas
+    values:
+      2022-01-01: 625
+      2023-01-01: 625
+      2024-01-01: 668
+  
+  family_2_children:
+    description: HAP limit for family with 2 children in other areas
+    values:
+      2022-01-01: 725
+      2023-01-01: 725
+      2024-01-01: 775

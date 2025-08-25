@@ -1,0 +1,52 @@
+title: PolicyEngine Ireland
+author: PolicyEngine
+logo: logo.png
+copyright: "2024"
+
+format: jb-book
+root: index
+chapters:
+- file: installation
+- file: quickstart  
+- file: tax_system
+  sections:
+  - file: tax_system/income_tax
+  - file: tax_system/usc
+  - file: tax_system/prsi
+- file: benefits_system
+  sections:
+  - file: benefits_system/child_benefit
+  - file: benefits_system/jobseekers
+  - file: benefits_system/state_pension
+  - file: benefits_system/working_family_payment
+- file: examples
+  sections:
+  - file: examples/basic_household
+  - file: examples/policy_reform
+- file: api_reference
+- file: contributing
+
+repository:
+  url: https://github.com/PolicyEngine/policyengine-ie
+  branch: main
+
+html:
+  use_issues_button: true
+  use_repository_button: true
+  use_edit_page_button: true
+
+parse:
+  myst_enable_extensions:
+  - colon_fence
+  - deflist
+  - dollarmath
+  - html_admonition
+  - html_image
+  - linkify
+  - replacements
+  - smartquotes
+  - substitution
+  - tasklist
+
+execute:
+  execute_notebooks: cache

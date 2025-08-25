@@ -1,0 +1,90 @@
+- name: Child Benefit for child under 12
+  description: Test Child Benefit for child aged 8
+  period: 2024
+  input:
+    people:
+      child_1:
+        age: 8
+    families:
+      family_1:
+        children: [child_1]
+    households:
+      household_1:
+        members: [child_1]
+  output:
+    child_benefit:
+      child_1: 2208  # €184 per month * 12 months = €2,208
+
+- name: Child Benefit for child aged 12 and over
+  description: Test Child Benefit for teenager aged 15
+  period: 2024
+  input:
+    people:
+      child_1:
+        age: 15
+    families:
+      family_1:
+        children: [child_1]
+    households:
+      household_1:
+        members: [child_1]
+  output:
+    child_benefit:
+      child_1: 2592  # €216 per month * 12 months = €2,592
+
+- name: Child Benefit for twins under 12
+  description: Test Child Benefit for twin children aged 6
+  period: 2024
+  input:
+    people:
+      child_1:
+        age: 6
+        is_twin: true
+      child_2:
+        age: 6
+        is_twin: true
+    families:
+      family_1:
+        children: [child_1, child_2]
+    households:
+      household_1:
+        members: [child_1, child_2]
+  output:
+    child_benefit:
+      child_1: 3312  # €184 * 1.5 * 12 = €3,312
+      child_2: 3312  # €184 * 1.5 * 12 = €3,312
+
+- name: No Child Benefit for adult
+  description: Test that adults don't receive Child Benefit
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 25
+    families:
+      family_1:
+        parents: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    child_benefit:
+      person_1: 0
+
+- name: Child Benefit for student under 22
+  description: Test Child Benefit for 20-year-old in full-time education
+  period: 2024
+  input:
+    people:
+      child_1:
+        age: 20
+        is_in_full_time_education: true
+    families:
+      family_1:
+        children: [child_1]
+    households:
+      household_1:
+        members: [child_1]
+  output:
+    child_benefit:
+      child_1: 2592  # €216 per month * 12 months = €2,592

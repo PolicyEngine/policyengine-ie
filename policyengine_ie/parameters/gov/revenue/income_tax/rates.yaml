@@ -1,0 +1,24 @@
+description: Irish income tax rates by bracket
+reference:
+  - title: Tax rates, bands and reliefs
+    href: https://www.revenue.ie/en/personal-tax-credits-reliefs-and-exemptions/tax-relief-charts/index.aspx
+  - title: How your income tax is calculated
+    href: https://www.citizensinformation.ie/en/money-and-tax/tax/income-tax/how-your-tax-is-calculated/
+metadata:
+  unit: /1
+  label: Income tax rates
+  currency: EUR
+
+standard_rate:
+  description: Standard rate of income tax (first bracket)
+  values:
+    2022-01-01: 0.20
+    2023-01-01: 0.20
+    2024-01-01: 0.20
+
+higher_rate:
+  description: Higher rate of income tax (second bracket)
+  values:
+    2022-01-01: 0.40
+    2023-01-01: 0.40
+    2024-01-01: 0.40

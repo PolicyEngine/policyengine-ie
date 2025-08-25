@@ -1,0 +1,26 @@
+description: PRSI employer contribution rates by class and earnings threshold
+reference:
+  - title: Pay Related Social Insurance (PRSI)
+    href: https://www.revenue.ie/en/employing-people/paying-your-employees-tax-to-revenue/prsi.aspx
+  - title: PRSI Rates in Ireland to increase in October 2024
+    href: https://www.paycheckplus.ie/irish-payroll/prsi-rates-in-ireland-to-increase-in-october-2024/
+metadata:
+  unit: /1
+  label: PRSI employer rates
+  currency: EUR
+
+class_a_standard:
+  description: Employer PRSI rate for Class A (weekly earnings up to threshold)
+  values:
+    2022-01-01: 0.085
+    2023-01-01: 0.085
+    2024-01-01: 0.088
+    2024-10-01: 0.089  # Increased by 0.1% from October 2024
+
+class_a_higher:
+  description: Employer PRSI rate for Class A (weekly earnings above threshold)
+  values:
+    2022-01-01: 0.107
+    2023-01-01: 0.107
+    2024-01-01: 0.11
+    2024-10-01: 0.1115  # Increased by 0.1% from October 2024

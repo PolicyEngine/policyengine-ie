@@ -1,0 +1,68 @@
+description: Child Benefit payment rates
+reference:
+  - title: Child Benefit
+    href: https://www.citizensinformation.ie/en/social-welfare/social-welfare-payments/families-and-children/child-benefit/
+  - title: Social welfare rates announced in Budget 2025
+    href: https://www.citizensinformation.ie/en/money-and-tax/budgets/social-welfare-rates-announced-in-budget-2025/
+metadata:
+  unit: currency-EUR
+  label: Child Benefit rates
+  period: month
+
+child_under_12:
+  description: Monthly Child Benefit rate for children under 12
+  values:
+    2022-01-01: 140
+    2023-01-01: 140
+    2024-01-01: 184  # Increased by €4 per week = €17.33 per month
+    2025-01-01: 184  # No change announced for 2025
+
+child_12_and_over:
+  description: Monthly Child Benefit rate for children aged 12 and over
+  values:
+    2022-01-01: 140
+    2023-01-01: 140
+    2024-01-01: 216  # Increased by €4 per week = €17.33 per month
+    2025-01-01: 216  # No change announced for 2025
+
+# Special rates for multiple births
+twins_multiplier:
+  description: Multiplier for Child Benefit for twins (1.5x normal rate)
+  values:
+    2022-01-01: 1.5
+    2023-01-01: 1.5
+    2024-01-01: 1.5
+    2025-01-01: 1.5
+
+multiple_births_multiplier:
+  description: Multiplier for Child Benefit for triplets and higher multiple births (2x normal rate)
+  values:
+    2022-01-01: 2.0
+    2023-01-01: 2.0
+    2024-01-01: 2.0
+    2025-01-01: 2.0
+
+# Age thresholds
+age_threshold_12:
+  description: Age threshold for higher Child Benefit rate
+  values:
+    2022-01-01: 12
+    2023-01-01: 12
+    2024-01-01: 12
+    2025-01-01: 12
+
+upper_age_limit:
+  description: Upper age limit for Child Benefit (18, or 22 if in full-time education)
+  values:
+    2022-01-01: 18
+    2023-01-01: 18
+    2024-01-01: 18
+    2025-01-01: 18
+
+upper_age_limit_education:
+  description: Upper age limit for Child Benefit if in full-time education
+  values:
+    2022-01-01: 22
+    2023-01-01: 22
+    2024-01-01: 22
+    2025-01-01: 22

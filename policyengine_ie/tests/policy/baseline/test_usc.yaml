@@ -1,0 +1,71 @@
+- name: USC calculation for middle income earner
+  description: Test USC calculation for someone earning €50,000
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 35
+        employment_income: 50000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    usc:
+      person_1: 1570.44  # €12,012@0.5% + €13,748@2% + €24,240@4% = €60.06 + €274.96 + €969.60 = €1,304.62
+
+- name: USC exempt - low income
+  description: Test that low income earners are exempt from USC
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 25
+        employment_income: 12000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    usc:
+      person_1: 0
+
+- name: USC reduced rate for over 70s
+  description: Test USC reduced rate for those aged 70+ with income under €60,000
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 75
+        employment_income: 40000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    usc:
+      person_1: 524.36  # Reduced rates: €12,012@0.5% + €13,748@2% + €14,240@2%
+
+- name: High income USC calculation
+  description: Test USC for high income earner hitting all bands
+  period: 2024
+  input:
+    people:
+      person_1:
+        age: 45
+        employment_income: 100000
+    tax_units:
+      tax_unit_1:
+        adults: [person_1]
+    households:
+      household_1:
+        members: [person_1]
+  output:
+    usc:
+      person_1: 4734.44  # All bands: €60.06 + €274.96 + €1,771.36 + €2,396.48 (€29,956@8%)
