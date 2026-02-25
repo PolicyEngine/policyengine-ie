@@ -89,7 +89,7 @@ jobs:
     
     - name: Install build dependencies
       run: |
-        uv pip install --system build
+        uv pip install --system build twine
     
     - name: Build package
       run: |
@@ -98,3 +98,51 @@ jobs:
     - name: Check package
       run: |
         python -m twine check dist/*
+
+  check-changelog:
+    name: Check changelog fragment
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for changelog fragment
+        run: |
+          FRAGMENTS=$(find changelog.d -type f ! -name '.gitkeep' | wc -l)
+          if [ "$FRAGMENTS" -eq 0 ]; then
+            echo "::error::No changelog fragment found in changelog.d/"
+            echo "Add one with: echo 'Description.' > changelog.d/\$(git branch --show-current).<type>.md"
+            echo "Types: added, changed, fixed, removed, breaking"
+            exit 1
+          fi
+
+  version-and-changelog:
+    name: Build changelog
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    needs: [test, build]
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Build changelog
+        run: |
+          pip install towncrier
+          python .github/bump_version.py
+          towncrier build --yes --version $(python -c "import re; print(re.search(r'version = \"(.+?)\"', open('pyproject.toml').read()).group(1))")
+
+      - name: Commit and push version bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Update changelog and bump version [skip ci]"
+          git push
