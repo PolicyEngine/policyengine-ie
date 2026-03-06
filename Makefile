@@ -4,8 +4,7 @@ documentation:
 	myst build docs -o docs/_build
 
 format:
-	black . -l 79
-	linecheck . --fix
+	ruff format .
 
 install:
 	uv pip install --system -e .[dev]

@@ -14,9 +14,7 @@ class gross_income_for_usc(Variable):
     investment, rental, pension, and unearned income.
     """
     unit = EUR
-    reference = (
-        "https://www.revenue.ie/en/jobs-and-pensions/usc/calculating-usc.aspx"
-    )
+    reference = "https://www.revenue.ie/en/jobs-and-pensions/usc/calculating-usc.aspx"
 
     def formula(person, period, parameters):
         employment_income = person("employment_income", period)

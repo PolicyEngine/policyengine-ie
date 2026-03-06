@@ -30,13 +30,9 @@ jobs:
       run: |
         uv pip install --system -e .[dev]
     
-    - name: Check formatting with Black
+    - name: Check formatting with ruff
       run: |
-        black . --check -l 79
-    
-    - name: Check line endings
-      run: |
-        linecheck . --check
+        ruff format --check .
     
     - name: Run tests
       run: |

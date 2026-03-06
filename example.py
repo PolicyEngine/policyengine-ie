@@ -13,9 +13,7 @@ from policyengine_core.simulations import Simulation
 def create_working_family_example():
     """Example: Working family with two children."""
     print("=== Working Family Example ===")
-    print(
-        "Two-parent family, one working (€60,000), two children (ages 6 and 15)"
-    )
+    print("Two-parent family, one working (€60,000), two children (ages 6 and 15)")
 
     system = IrishTaxBenefitSystem()
     simulation = Simulation(system=system)
@@ -58,9 +56,7 @@ def create_working_family_example():
     period = "2024"
 
     # Income and taxes
-    employment_income = simulation.calculate("employment_income", period)[
-        "parent_1"
-    ]
+    employment_income = simulation.calculate("employment_income", period)["parent_1"]
     income_tax = simulation.calculate("income_tax", period)["parent_1"]
     usc = simulation.calculate("usc", period)["parent_1"]
     employee_prsi = simulation.calculate("employee_prsi", period)["parent_1"]
@@ -83,7 +79,7 @@ def create_working_family_example():
     print(f"Child Benefit (child 2): €{child_benefit_2:,.2f}")
     print(f"Total Child Benefit: €{total_child_benefit:,.2f}")
     print(f"Net Annual Income: €{net_income:,.2f}")
-    print(f"Effective Tax Rate: {total_taxes/employment_income*100:.1f}%")
+    print(f"Effective Tax Rate: {total_taxes / employment_income * 100:.1f}%")
     print()
 
 
@@ -108,9 +104,7 @@ def create_single_earner_example():
     # Calculate results
     period = "2024"
 
-    employment_income = simulation.calculate("employment_income", period)[
-        "person_1"
-    ]
+    employment_income = simulation.calculate("employment_income", period)["person_1"]
     income_tax = simulation.calculate("income_tax", period)["person_1"]
     usc = simulation.calculate("usc", period)["person_1"]
     employee_prsi = simulation.calculate("employee_prsi", period)["person_1"]
@@ -124,9 +118,9 @@ def create_single_earner_example():
     print(f"Employee PRSI: €{employee_prsi:,.2f}")
     print(f"Total Taxes: €{total_taxes:,.2f}")
     print(f"Net Annual Income: €{net_income:,.2f}")
-    print(f"Effective Tax Rate: {total_taxes/employment_income*100:.1f}%")
+    print(f"Effective Tax Rate: {total_taxes / employment_income * 100:.1f}%")
     print(
-        f"Marginal Tax Rate: {(0.20 + 0.04 + 0.041)*100:.1f}%"
+        f"Marginal Tax Rate: {(0.20 + 0.04 + 0.041) * 100:.1f}%"
     )  # Standard rate + USC + PRSI
     print()
 
@@ -150,9 +144,7 @@ def create_pensioner_example():
         benefit_unit_id="benefit_unit_1", adults=["pensioner_1"]
     )
 
-    simulation.add_household(
-        household_id="household_1", members=["pensioner_1"]
-    )
+    simulation.add_household(household_id="household_1", members=["pensioner_1"])
 
     # Note: This is a simplified example - would need to implement state pension calculation
     print("State Pension (Contributory): €15,043 per year")
@@ -182,13 +174,9 @@ def compare_tax_years():
     simulation.add_household(household_id="household_1", members=["person_1"])
 
     for year in ["2023", "2024"]:
-        income_tax = simulation.calculate("income_tax", period=year)[
-            "person_1"
-        ]
+        income_tax = simulation.calculate("income_tax", period=year)["person_1"]
         usc = simulation.calculate("usc", period=year)["person_1"]
-        employee_prsi = simulation.calculate("employee_prsi", period=year)[
-            "person_1"
-        ]
+        employee_prsi = simulation.calculate("employee_prsi", period=year)["person_1"]
 
         total_taxes = income_tax + usc + employee_prsi
         net_income = 50000 - total_taxes
@@ -196,7 +184,7 @@ def compare_tax_years():
         print(f"{year}:")
         print(f"  Total Taxes: €{total_taxes:,.2f}")
         print(f"  Net Income: €{net_income:,.2f}")
-        print(f"  Effective Tax Rate: {total_taxes/50000*100:.1f}%")
+        print(f"  Effective Tax Rate: {total_taxes / 50000 * 100:.1f}%")
 
     print()
 
@@ -220,7 +208,5 @@ if __name__ == "__main__":
 
     except Exception as e:
         print(f"❌ Error running examples: {e}")
-        print(
-            "\nThis is expected if you haven't installed all dependencies yet."
-        )
+        print("\nThis is expected if you haven't installed all dependencies yet.")
         print("Run 'make install' to set up the development environment.")
