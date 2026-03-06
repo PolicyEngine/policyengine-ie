@@ -27,9 +27,7 @@ class child_benefit(Variable):
         p = parameters(period).gov.dsp.child_benefit.rates
 
         # Determine if eligible (under 18, or under 22 if in full-time education)
-        is_in_education = person(
-            "is_in_full_time_education", period, options=[False]
-        )
+        is_in_education = person("is_in_full_time_education", period, options=[False])
         eligible = logical_or(
             age < p.upper_age_limit,
             logical_and(age < p.upper_age_limit_education, is_in_education),

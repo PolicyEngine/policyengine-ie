@@ -65,13 +65,13 @@ class YamlTestItem(pytest.Item):
 
                 # Allow small tolerance for floating point comparisons
                 if isinstance(expected_value, (int, float)):
-                    assert (
-                        abs(calculated - expected_value) < 0.01
-                    ), f"{variable_name}: expected {expected_value}, got {calculated}"
+                    assert abs(calculated - expected_value) < 0.01, (
+                        f"{variable_name}: expected {expected_value}, got {calculated}"
+                    )
                 else:
-                    assert (
-                        calculated == expected_value
-                    ), f"{variable_name}: expected {expected_value}, got {calculated}"
+                    assert calculated == expected_value, (
+                        f"{variable_name}: expected {expected_value}, got {calculated}"
+                    )
 
     def reportinfo(self):
         """Report test location."""

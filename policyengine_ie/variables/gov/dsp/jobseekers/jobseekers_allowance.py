@@ -19,32 +19,24 @@ class jobseekers_allowance(Variable):
     def formula(person, period, parameters):
         age = person("age", period)
         is_unemployed = person("is_unemployed", period, options=[False])
-        is_available_for_work = person(
-            "is_available_for_work", period, options=[True]
-        )
+        is_available_for_work = person("is_available_for_work", period, options=[True])
         is_genuinely_seeking_work = person(
             "is_genuinely_seeking_work", period, options=[True]
         )
 
         # Means test
-        assessable_income = person(
-            "assessable_income_jobseekers", period, options=[0]
-        )
+        assessable_income = person("assessable_income_jobseekers", period, options=[0])
         means_test_passed = person("jobseekers_means_test", period)
 
         # Living independently check for under 25s
         is_living_independently = person(
             "is_living_independently", period, options=[False]
         )
-        has_housing_support = person(
-            "has_housing_support", period, options=[False]
-        )
+        has_housing_support = person("has_housing_support", period, options=[False])
 
         benefit_unit = person.benefit_unit
         qualified_adults = benefit_unit("qualified_adults_jobseekers", period)
-        qualified_children = benefit_unit(
-            "qualified_children_jobseekers", period
-        )
+        qualified_children = benefit_unit("qualified_children_jobseekers", period)
 
         p = parameters(period).gov.dsp.jobseekers.rates
 

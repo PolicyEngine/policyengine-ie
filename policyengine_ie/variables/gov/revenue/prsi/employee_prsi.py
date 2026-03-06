@@ -18,9 +18,7 @@ class employee_prsi(Variable):
 
     def formula(person, period, parameters):
         employment_income = person("employment_income", period)
-        prsi_class = person(
-            "prsi_class", period, options=["A"]
-        )  # Default to Class A
+        prsi_class = person("prsi_class", period, options=["A"])  # Default to Class A
         age = person("age", period)
 
         p = parameters(period).gov.revenue.prsi
@@ -32,9 +30,7 @@ class employee_prsi(Variable):
         exempt_age = logical_or(age < 16, age >= 70)
 
         # Check if below minimum earnings threshold
-        below_threshold = (
-            weekly_earnings <= p.thresholds.employee_weekly_threshold
-        )
+        below_threshold = weekly_earnings <= p.thresholds.employee_weekly_threshold
 
         # Calculate PRSI rate based on class (simplified to Class A)
         employee_rate = p.employee_rates.class_a

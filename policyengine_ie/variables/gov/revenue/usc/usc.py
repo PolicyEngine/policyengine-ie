@@ -27,9 +27,9 @@ class usc(Variable):
         exempt = gross_income <= p.thresholds.exemption_threshold
 
         # Check if eligible for reduced rates
-        eligible_for_reduced_rates = logical_or(
-            age >= 70, has_medical_card
-        ) * (gross_income <= p.thresholds.reduced_rate_income_threshold)
+        eligible_for_reduced_rates = logical_or(age >= 70, has_medical_card) * (
+            gross_income <= p.thresholds.reduced_rate_income_threshold
+        )
 
         # Calculate USC using progressive rates
         band_1_threshold = p.thresholds.band_1_upper

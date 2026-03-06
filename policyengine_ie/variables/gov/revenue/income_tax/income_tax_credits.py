@@ -26,9 +26,7 @@ class income_tax_credits(Variable):
         p = parameters(period).gov.revenue.income_tax.credits
 
         # Personal tax credit
-        personal_credit = where(
-            is_married, p.personal.married, p.personal.single
-        )
+        personal_credit = where(is_married, p.personal.married, p.personal.single)
 
         # PAYE credit (if has employment income)
         paye_credit = where(has_employment, p.paye, 0)
@@ -41,8 +39,6 @@ class income_tax_credits(Variable):
             is_renting, where(is_married, p.rent.married, p.rent.single), 0
         )
 
-        total_credits = (
-            personal_credit + paye_credit + age_credit + rent_credit
-        )
+        total_credits = personal_credit + paye_credit + age_credit + rent_credit
 
         return total_credits

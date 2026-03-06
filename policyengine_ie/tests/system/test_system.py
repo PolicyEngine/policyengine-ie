@@ -29,22 +29,16 @@ class TestIrishTaxBenefitSystem:
         simulation = Simulation(system=system)
 
         # Add a person
-        simulation.add_person(
-            person_id="person_1", age=35, employment_income=50000
-        )
+        simulation.add_person(person_id="person_1", age=35, employment_income=50000)
 
         # Add household structure
         simulation.add_tax_unit(tax_unit_id="tax_unit_1", adults=["person_1"])
 
-        simulation.add_household(
-            household_id="household_1", members=["person_1"]
-        )
+        simulation.add_household(household_id="household_1", members=["person_1"])
 
         # Test basic calculations
         age = simulation.calculate("age", period="2024")
-        employment_income = simulation.calculate(
-            "employment_income", period="2024"
-        )
+        employment_income = simulation.calculate("employment_income", period="2024")
 
         assert age["person_1"] == 35
         assert employment_income["person_1"] == 50000
