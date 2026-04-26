@@ -6,9 +6,28 @@ This file configures pytest to discover and run YAML-based policy tests.
 
 import pytest
 import yaml
-from pathlib import Path
+import re
 from policyengine_ie import IrishTaxBenefitSystem
 from policyengine_core.simulations import Simulation
+
+
+PERIOD_PATTERN = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
+
+
+def is_period_key(key):
+    return str(key) == "ETERNITY" or bool(PERIOD_PATTERN.match(str(key)))
+
+
+def normalize_input_values(value, period):
+    if isinstance(value, dict):
+        if value and all(is_period_key(key) for key in value):
+            return value
+        return {
+            key: normalize_input_values(child, period) for key, child in value.items()
+        }
+    if isinstance(value, list):
+        return value
+    return {period: value}
 
 
 def pytest_collect_file(parent, path):
@@ -44,6 +63,7 @@ class YamlTestItem(pytest.Item):
         # Build situation from input
         situation = self.spec.get("input", {})
         period = str(self.spec.get("period", "2024"))
+        situation = normalize_input_values(situation, period)
 
         # Create simulation
         simulation = Simulation(tax_benefit_system=system, situation=situation)
