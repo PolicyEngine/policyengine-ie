@@ -13,8 +13,8 @@
       household_1:
         members: [person_1]
   output:
-    income_tax:
-      person_1: 3_600  # €42,000 @ 20% (€8,400) + €8,000 @ 40% (€3,200) = €11,600 - tax credits
+    income_tax_net:
+      person_1: 7_850
 
 - name: Income tax at standard rate threshold
   description: Test income tax for someone earning exactly at the standard rate threshold
@@ -31,7 +31,7 @@
       household_1:
         members: [person_1]
   output:
-    income_tax:
+    income_tax_net:
       person_1: 4_650  # €42,000 @ 20% = €8,400 - personal credit €1,875 - PAYE credit €1,875
 
 - name: Low income no tax liability
@@ -49,7 +49,7 @@
       household_1:
         members: [person_1]
   output:
-    income_tax:
+    income_tax_net:
       person_1: 0  # €15,000 @ 20% = €3,000 - credits €3,750 = €0
 
 - name: High income earner
@@ -67,5 +67,5 @@
       household_1:
         members: [person_1]
   output:
-    income_tax:
-      person_1: 27_450  # €42,000 @ 20% (€8,400) + €58,000 @ 40% (€23,200) - credits (€3,750)
+    income_tax_net:
+      person_1: 27_850

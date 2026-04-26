@@ -7,6 +7,7 @@ This file configures pytest to discover and run YAML-based policy tests.
 import pytest
 import yaml
 import re
+import numpy as np
 from policyengine_ie import IrishTaxBenefitSystem
 from policyengine_core.simulations import Simulation
 
@@ -70,28 +71,56 @@ class YamlTestItem(pytest.Item):
 
         # Check outputs
         expected_outputs = self.spec.get("output", {})
-        for variable_name, expected_value in expected_outputs.items():
-            if isinstance(expected_value, dict):
-                # Handle per-entity outputs
-                for entity_name, entity_expected in expected_value.items():
-                    calculated = simulation.calculate(variable_name, period)
-                    # Would need entity index mapping here
-                    pass
-            else:
-                # Simple case: single value
-                calculated = simulation.calculate(variable_name, period)
-                if hasattr(calculated, "__len__"):
-                    calculated = calculated[0]
+        person_ids = list(situation.get("people", {}).keys())
 
-                # Allow small tolerance for floating point comparisons
-                if isinstance(expected_value, (int, float)):
-                    assert abs(calculated - expected_value) < 0.01, (
-                        f"{variable_name}: expected {expected_value}, got {calculated}"
-                    )
+        for output_key, expected_value in expected_outputs.items():
+            if output_key in system.variables:
+                if isinstance(expected_value, dict):
+                    for entity_name, entity_expected in expected_value.items():
+                        self.assert_variable(
+                            simulation,
+                            output_key,
+                            period,
+                            entity_expected,
+                            index=person_ids.index(entity_name),
+                        )
                 else:
-                    assert calculated == expected_value, (
-                        f"{variable_name}: expected {expected_value}, got {calculated}"
+                    self.assert_variable(simulation, output_key, period, expected_value)
+            elif isinstance(expected_value, dict) and output_key in person_ids:
+                for variable_name, entity_expected in expected_value.items():
+                    self.assert_variable(
+                        simulation,
+                        variable_name,
+                        period,
+                        entity_expected,
+                        index=person_ids.index(output_key),
                     )
+            else:
+                raise AssertionError(f"Unknown output target: {output_key}")
+
+    def assert_variable(
+        self, simulation, variable_name, period, expected_value, index=0
+    ):
+        calculated = simulation.calculate(variable_name, period)
+        if isinstance(calculated, np.ndarray):
+            calculated = calculated[index]
+        elif hasattr(calculated, "__len__") and not isinstance(
+            calculated, (str, bytes)
+        ):
+            calculated = calculated[index]
+
+        if isinstance(expected_value, bool):
+            assert bool(calculated) is expected_value, (
+                f"{variable_name}: expected {expected_value}, got {calculated}"
+            )
+        elif isinstance(expected_value, (int, float)):
+            assert abs(calculated - expected_value) < 0.01, (
+                f"{variable_name}: expected {expected_value}, got {calculated}"
+            )
+        else:
+            assert calculated == expected_value, (
+                f"{variable_name}: expected {expected_value}, got {calculated}"
+            )
 
     def reportinfo(self):
         """Report test location."""

@@ -14,7 +14,7 @@
         members: [person_1]
   output:
     usc:
-      person_1: 1_570.44  # €12,012@0.5% + €13,748@2% + €24,240@4% = €60.06 + €274.96 + €969.60 = €1,304.62
+      person_1: 1_304.62
 
 - name: USC exempt - low income
   description: Test that low income earners are exempt from USC
@@ -50,7 +50,7 @@
         members: [person_1]
   output:
     usc:
-      person_1: 524.36  # Reduced rates: €12,012@0.5% + €13,748@2% + €14,240@2%
+      person_1: 619.82
 
 - name: High income USC calculation
   description: Test USC for high income earner hitting all bands
@@ -68,4 +68,4 @@
         members: [person_1]
   output:
     usc:
-      person_1: 4_734.44  # All bands: €60.06 + €274.96 + €1,771.36 + €2,396.48 (€29,956@8%)
+      person_1: 4_502.86
