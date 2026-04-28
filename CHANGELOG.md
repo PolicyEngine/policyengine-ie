@@ -1,3 +1,11 @@
+## 0.1.1
+
+### Changed
+
+- Migrate from changelog.yaml to towncrier fragments. (migrate-to-towncrier)
+- Switch from black to ruff format. (switch-to-ruff)
+
+
 # Changelog
 
 All notable changes to PolicyEngine Ireland will be documented in this file.
