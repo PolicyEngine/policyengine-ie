@@ -13,11 +13,12 @@ class TestIrishTaxBenefitSystem:
         system = IrishTaxBenefitSystem()
 
         # Check that entities are properly defined
-        assert "person" in system.entities
-        assert "tax_unit" in system.entities
-        assert "benefit_unit" in system.entities
-        assert "family" in system.entities
-        assert "household" in system.entities
+        entity_keys = [entity.key for entity in system.entities]
+        assert "person" in entity_keys
+        assert "tax_unit" in entity_keys
+        assert "benefit_unit" in entity_keys
+        assert "family" in entity_keys
+        assert "household" in entity_keys
 
         # Check that system has parameters and variables directories
         assert system.parameters_dir is not None
@@ -26,32 +27,37 @@ class TestIrishTaxBenefitSystem:
     def test_basic_simulation(self):
         """Test that a basic simulation can be created and run."""
         system = IrishTaxBenefitSystem()
-        simulation = Simulation(system=system)
-
-        # Add a person
-        simulation.add_person(person_id="person_1", age=35, employment_income=50000)
-
-        # Add household structure
-        simulation.add_tax_unit(tax_unit_id="tax_unit_1", adults=["person_1"])
-
-        simulation.add_household(household_id="household_1", members=["person_1"])
+        simulation = Simulation(
+            tax_benefit_system=system,
+            situation={
+                "people": {
+                    "person_1": {
+                        "age": {"2024": 35},
+                        "employment_income": {"2024": 50000},
+                    },
+                },
+                "tax_units": {"tax_unit_1": {"adults": ["person_1"]}},
+                "households": {"household_1": {"members": ["person_1"]}},
+            },
+        )
 
         # Test basic calculations
         age = simulation.calculate("age", period="2024")
         employment_income = simulation.calculate("employment_income", period="2024")
 
-        assert age["person_1"] == 35
-        assert employment_income["person_1"] == 50000
+        assert age[0] == 35
+        assert employment_income[0] == 50000
 
     def test_entities_properties(self):
         """Test that entity properties work correctly."""
         system = IrishTaxBenefitSystem()
 
-        assert system.person_entity.key == "person"
-        assert system.household_entity.key == "household"
-        assert system.tax_unit_entity.key == "tax_unit"
-        assert system.benefit_unit_entity.key == "benefit_unit"
-        assert system.family_entity.key == "family"
+        entities = {entity.key: entity for entity in system.entities}
+        assert entities["person"].key == "person"
+        assert entities["household"].key == "household"
+        assert entities["tax_unit"].key == "tax_unit"
+        assert entities["benefit_unit"].key == "benefit_unit"
+        assert entities["family"].key == "family"
 
     def test_system_with_reform(self):
         """Test that the system can accept a reform parameter."""
